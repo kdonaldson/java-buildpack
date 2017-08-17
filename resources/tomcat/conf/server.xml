@@ -32,23 +32,11 @@
         </Engine>
     </Service>
 
-  <GlobalNamingResources>
-    <Resource name="UserDatabase" auth="Container"
-              type="org.apache.catalina.UserDatabase"
-              description="User database that can be updated and saved"
-              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
-              pathname="conf/tomcat-users.xml" />
-    <Resource
-        name="jdbc/auth"
-        description="Sample authentication"
-        type="javax.sql.DataSource"
-        auth="Container"
-        driverClassName="org.apache.derby.jdbc.ClientDriver"
-        maxActive="10" maxIdle="3"
-        maxWait="10000"
-        password="PASSWORD"
-        url="jdbc:derby://localhost:1527/authorize"
-        validationQuery="values(1)"
-        username="USER"/>
-  </GlobalNamingResources>
+<Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+  <Resource name="UserDatabase" auth="Container"
+	type="org.apache.catalina.UserDatabase"
+	description="User database that can be updated and saved"
+	factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+	pathname="conf/tomcat-users.xml">
+</Resource>
 </Server>
