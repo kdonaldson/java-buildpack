@@ -16,7 +16,14 @@
   -->
 
 <Server port='-1'>
-
+<globalnamingresources>
+	<Resource name="UserDatabase" auth="Container"
+	type="org.apache.catalina.UserDatabase"
+	description="User database that can be updated and saved"
+	factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+	pathname="conf/tomcat-users.xml">
+	</Resource>
+</globalnamingresources>
     <Service name='Catalina'>
         <Connector port='${http.port}' bindOnInit='false' connectionTimeout='20000'/>
 
@@ -33,20 +40,6 @@
     </Service>
 
 <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
-<globalnamingresources>
-
-<!-- Editable user database that can also be used by<br />
-	         UserDatabaseRealm to authenticate users -->
-
-
-<Resource name="UserDatabase" auth="Container"
-	type="org.apache.catalina.UserDatabase"
-	description="User database that can be updated and saved"
-	factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
-	pathname="conf/tomcat-users.xml">
-</Resource>
-
-</globalnamingresources>
 	
 
 </Server>
