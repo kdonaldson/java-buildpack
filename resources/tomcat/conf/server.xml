@@ -36,10 +36,8 @@
                   failCtxIfServletStartFails='true'>
                 <Listener className='org.cloudfoundry.tomcat.lifecycle.ApplicationStartupFailureDetectingLifecycleListener'/>
             </Host>
+		<Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
         </Engine>
-    </Service>
-
-<Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
-	
+    </Service>	
 
 </Server>
