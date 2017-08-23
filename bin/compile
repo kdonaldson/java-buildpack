@@ -26,7 +26,7 @@ out_file = File.new(build_dir + "/out.txt", "w")
 out_file.puts("<?xml version='1.0' encoding='utf-8'?>")
 out_file.puts("<tomcat-users>")
 out_file.puts("  <role rolename=\"tomcat\"/>")
-out_file.puts("  <user username=\"ENV["TOMCAT_USER"]\" password=\"ENV["TOMCAT_PASS"]\" roles=\"tomcat\"/>")
+out_file.puts("  <user username=\"ENV[\"TOMCAT_USER\"]\" password=\"ENV[\"TOMCAT_PASS\"]\" roles=\"tomcat\"/>")
 out_file.puts("</tomcat-users>")
 out_file.close
 
