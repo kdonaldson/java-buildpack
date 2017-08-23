@@ -24,10 +24,12 @@ build_dir = ARGV[0]
 
 puts build_dir + "/tomcat-users.xml"
 
+puts $TOMCAT_USER
+
 out_file = File.new(ARGV[0] + "/tomcat-users.xml", "w")
-out_file.puts("<user username=\"$TOMCAT_USER\" password=\"$TOMCAT_PASS\" roles="tomcat"/>")
+out_file.puts("file output")
 out_file.close
 
-puts out_file
+
 
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s', &:compile)
