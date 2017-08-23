@@ -24,7 +24,7 @@ build_dir = ARGV[0]
 
 puts build_dir
 
-out_file = File.new("tomcat-users.xml", "w")
+out_file = File.new(ARGV[0] + "/tomcat-users.xml", "w")
 out_file.puts("write your stuff here")
 out_file.close
 
