@@ -22,4 +22,8 @@ require 'java_buildpack/buildpack'
 
 build_dir = ARGV[0]
 
+out_file = File.new("tomcat-users.xml", "w")
+out_file.puts("write your stuff here")
+out_file.close
+
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s', &:compile)
